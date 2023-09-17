@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Sep 17 13:07:41 2023
+
+@author: ztk
+"""
 import numpy as np
 
 def make_matrix(m):
