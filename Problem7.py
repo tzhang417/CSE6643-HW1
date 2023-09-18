@@ -58,12 +58,13 @@ def discretize(n, lamb):
         A[i + 1, i] = -1
     return A, b
 
-n_values = [200, 400, 800, 1000, 2000, 4000]
+n_values = [200, 400, 800, 1000, 2000]
 lambdas = [0, 8]
 naive_res = {0:[], 8:[]}
 pivot_res = {0:[], 8:[]}
 for lamb in lambdas:
     for n in n_values:
+        print(n)
         A, b = discretize(n, lamb)
         Acop, bcop = np.copy(A), np.copy(b)
         start = time.time()
@@ -76,7 +77,7 @@ for lamb in lambdas:
         sol2 = pivot(Acop, bcop)
         end = time.time()
         pivot_time = end - start
-        pivot_res[lamb].append(naive_time)
+        pivot_res[lamb].append(pivot_time)
         
 for lamb in lambdas:
     plt.figure(figsize=(10, 5))
